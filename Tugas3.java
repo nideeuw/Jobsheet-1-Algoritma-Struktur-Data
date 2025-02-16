@@ -4,18 +4,15 @@ public class Tugas3 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        // Meminta jumlah mata kuliah dari pengguna
         System.out.print("Masukkan jumlah mata kuliah: ");
         int n = input.nextInt();
         input.nextLine(); // Membuang newline
 
-        // Deklarasi array untuk menyimpan data mata kuliah
         String[] namaMatkul = new String[n];
         int[] sks = new int[n];
         int[] semester = new int[n];
         String[] hariKuliah = new String[n];
 
-        // Input data mata kuliah
         for (int i = 0; i < n; i++) {
             System.out.println("Masukkan data mata kuliah ke-" + (i + 1) + ":");
             System.out.print("Nama Mata Kuliah: ");
@@ -29,7 +26,6 @@ public class Tugas3 {
             hariKuliah[i] = input.nextLine();
         }
 
-        // Menu utama
         int pilihan;
         do {
             System.out.println("\nMenu:");
@@ -72,7 +68,6 @@ public class Tugas3 {
         input.close();
     }
 
-    // Menampilkan seluruh jadwal kuliah
     static void tampilkanSeluruhJadwal(String[] namaMatkul, int[] sks, int[] semester, String[] hariKuliah) {
         System.out.println("\nJadwal Kuliah:");
         for (int i = 0; i < namaMatkul.length; i++) {
@@ -80,7 +75,6 @@ public class Tugas3 {
         }
     }
 
-    // Menampilkan jadwal berdasarkan hari tertentu
     static void tampilkanJadwalBerdasarkanHari(String[] namaMatkul, int[] sks, int[] semester, String[] hariKuliah, String hari) {
         System.out.println("\nJadwal Kuliah untuk hari " + hari + ":");
         boolean found = false;
@@ -93,7 +87,6 @@ public class Tugas3 {
         if (!found) System.out.println("Tidak ada mata kuliah di hari tersebut.");
     }
 
-    // Menampilkan jadwal berdasarkan semester tertentu
     static void tampilkanJadwalBerdasarkanSemester(String[] namaMatkul, int[] sks, int[] semester, String[] hariKuliah, int sem) {
         System.out.println("\nJadwal Kuliah untuk Semester " + sem + ":");
         boolean found = false;
@@ -106,7 +99,6 @@ public class Tugas3 {
         if (!found) System.out.println("Tidak ada mata kuliah di semester tersebut.");
     }
 
-    // Mencari mata kuliah berdasarkan nama
     static void cariMataKuliah(String[] namaMatkul, int[] sks, int[] semester, String[] hariKuliah, String matkul) {
         System.out.println("\nHasil pencarian untuk mata kuliah \"" + matkul + "\":");
         boolean found = false;
